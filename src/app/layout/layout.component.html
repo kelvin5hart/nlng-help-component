@@ -1,0 +1,461 @@
+<div class="wrappers" (click)="hideTooltip()">
+  <!-- Header -->
+  <header id="topnav">
+    <div class="navbar-custom">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- Logo and Title -->
+          <div class="d-flex align-items-center">
+            <div class="logo-box me-3">
+              <div class="logo-placeholder">
+                <span class="logo-text">LNG</span>
+                <small>Nigeria<br>LNG<br>Limited</small>
+              </div>
+            </div>
+            <h2 class="text-white mb-0" style="font-size: 1.2rem;">NLNG - A & P Management portal</h2>
+          </div>
+          <!-- User Info -->
+          <div class="text-white">
+            <b>Ikechukwu Elendu (JI/VER)</b>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Secondary Nav -->
+    <div class="topbar-menu">
+      <div class="container-fluid">
+        <ul class="navigation-menu">
+          <li>
+            <a href="#">
+              <i class="mdi mdi-home-account"></i>
+              Home
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content Page -->
+  <div class="content-page">
+    <div class="content">
+      <div class="container-fluid">
+        <!-- Breadcrumb Row -->
+        <div class="row">
+          <div class="col-12">
+            <div class="page-title-box">
+              <h4 class="page-title">Home</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content Row -->
+        <div class="row">
+          <!-- Sidebar -->
+          <div class="col-md-2">
+            <div class="sidebar-menu">
+              <h4 class="header-title">Menu</h4>
+              <ul>
+                <!-- Request Assessment -->
+                <li class="menu-item-with-info">
+                  <a href="#">Request Assessment</a>
+                  <span class="info-icon" (click)="showTooltip('request-assessment', $event)">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-popup" *ngIf="activeTooltip === 'request-assessment'" (click)="$event.stopPropagation()">
+                    <div class="tooltip-header">
+                      <strong>{{ tabInfoMap['request-assessment'].name }}</strong>
+                      <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                    </div>
+                    <div class="tooltip-role">
+                      <i class="fas fa-user-tag"></i> {{ tabInfoMap['request-assessment'].role }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{ tabInfoMap['request-assessment'].description }}
+                    </div>
+                  </div>
+                </li>
+
+                <!-- SSI -->
+                <li class="menu-item-with-info">
+                  <a href="#">SSI</a>
+                  <span class="info-icon" (click)="showTooltip('ssi', $event)">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-popup" *ngIf="activeTooltip === 'ssi'" (click)="$event.stopPropagation()">
+                    <div class="tooltip-header">
+                      <strong>{{ tabInfoMap['ssi'].name }}</strong>
+                      <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                    </div>
+                    <div class="tooltip-role">
+                      <i class="fas fa-user-tag"></i> {{ tabInfoMap['ssi'].role }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{ tabInfoMap['ssi'].description }}
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Assessor -->
+                <li class="menu-item-with-info">
+                  <a href="#">Assessor</a>
+                  <span class="info-icon" (click)="showTooltip('assessor', $event)">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-popup" *ngIf="activeTooltip === 'assessor'" (click)="$event.stopPropagation()">
+                    <div class="tooltip-header">
+                      <strong>{{ tabInfoMap['assessor'].name }}</strong>
+                      <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                    </div>
+                    <div class="tooltip-role">
+                      <i class="fas fa-user-tag"></i> {{ tabInfoMap['assessor'].role }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{ tabInfoMap['assessor'].description }}
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Head of Shift -->
+                <li class="menu-item-with-info">
+                  <a href="#">Head of Shift</a>
+                  <span class="info-icon" (click)="showTooltip('head-of-shift', $event)">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-popup" *ngIf="activeTooltip === 'head-of-shift'" (click)="$event.stopPropagation()">
+                    <div class="tooltip-header">
+                      <strong>{{ tabInfoMap['head-of-shift'].name }}</strong>
+                      <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                    </div>
+                    <div class="tooltip-role">
+                      <i class="fas fa-user-tag"></i> {{ tabInfoMap['head-of-shift'].role }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{ tabInfoMap['head-of-shift'].description }}
+                    </div>
+                  </div>
+                </li>
+
+                <!-- HRL4 Assessment -->
+                <li class="menu-item-with-info">
+                  <a href="#">HRL4 Assessment</a>
+                  <span class="info-icon" (click)="showTooltip('hrl4', $event)">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-popup" *ngIf="activeTooltip === 'hrl4'" (click)="$event.stopPropagation()">
+                    <div class="tooltip-header">
+                      <strong>{{ tabInfoMap['hrl4'].name }}</strong>
+                      <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                    </div>
+                    <div class="tooltip-role">
+                      <i class="fas fa-user-tag"></i> {{ tabInfoMap['hrl4'].role }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{ tabInfoMap['hrl4'].description }}
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Verifier -->
+                <li class="menu-item-with-info">
+                  <a href="#">Verifier</a>
+                  <span class="info-icon" (click)="showTooltip('verifier', $event)">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-popup" *ngIf="activeTooltip === 'verifier'" (click)="$event.stopPropagation()">
+                    <div class="tooltip-header">
+                      <strong>{{ tabInfoMap['verifier'].name }}</strong>
+                      <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                    </div>
+                    <div class="tooltip-role">
+                      <i class="fas fa-user-tag"></i> {{ tabInfoMap['verifier'].role }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{ tabInfoMap['verifier'].description }}
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Batch Management -->
+                <li class="menu-item-with-info">
+                  <a href="#">Batch Management</a>
+                  <span class="info-icon" (click)="showTooltip('batch-management', $event)">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-popup" *ngIf="activeTooltip === 'batch-management'" (click)="$event.stopPropagation()">
+                    <div class="tooltip-header">
+                      <strong>{{ tabInfoMap['batch-management'].name }}</strong>
+                      <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                    </div>
+                    <div class="tooltip-role">
+                      <i class="fas fa-user-tag"></i> {{ tabInfoMap['batch-management'].role }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{ tabInfoMap['batch-management'].description }}
+                    </div>
+                  </div>
+                </li>
+
+                <!-- View Operators/Technicians -->
+                <li class="menu-item-with-info">
+                  <a href="#">View Operators/Technicians</a>
+                  <span class="info-icon" (click)="showTooltip('view-operators', $event)">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-popup" *ngIf="activeTooltip === 'view-operators'" (click)="$event.stopPropagation()">
+                    <div class="tooltip-header">
+                      <strong>{{ tabInfoMap['view-operators'].name }}</strong>
+                      <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                    </div>
+                    <div class="tooltip-role">
+                      <i class="fas fa-user-tag"></i> {{ tabInfoMap['view-operators'].role }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{ tabInfoMap['view-operators'].description }}
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Assessment Matrix -->
+                <li class="menu-item-with-info">
+                  <a href="#">Assessment matrix</a>
+                  <span class="info-icon" (click)="showTooltip('assessment-matrix', $event)">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-popup" *ngIf="activeTooltip === 'assessment-matrix'" (click)="$event.stopPropagation()">
+                    <div class="tooltip-header">
+                      <strong>{{ tabInfoMap['assessment-matrix'].name }}</strong>
+                      <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                    </div>
+                    <div class="tooltip-role">
+                      <i class="fas fa-user-tag"></i> {{ tabInfoMap['assessment-matrix'].role }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{ tabInfoMap['assessment-matrix'].description }}
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Progression Letters -->
+                <li class="menu-item-with-info">
+                  <a href="#">Progression Letters</a>
+                  <span class="info-icon" (click)="showTooltip('progression-letters', $event)">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-popup" *ngIf="activeTooltip === 'progression-letters'" (click)="$event.stopPropagation()">
+                    <div class="tooltip-header">
+                      <strong>{{ tabInfoMap['progression-letters'].name }}</strong>
+                      <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                    </div>
+                    <div class="tooltip-role">
+                      <i class="fas fa-user-tag"></i> {{ tabInfoMap['progression-letters'].role }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{ tabInfoMap['progression-letters'].description }}
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Admin Submenu -->
+                <li class="has-submenu">
+                  <a href="javascript:void(0)" (click)="toggleAdmin()">
+                    Admin
+                    <span class="ms-2" style="font-size: 10px;">{{ adminExpanded ? '▲' : '▼' }}</span>
+                  </a>
+                  <ul class="submenu" *ngIf="adminExpanded">
+                    <!-- Manage Plant Areas -->
+                    <li class="menu-item-with-info">
+                      <a href="#">Manage Plant Areas</a>
+                      <span class="info-icon" (click)="showTooltip('admin-areas', $event)">
+                        <i class="fas fa-info-circle"></i>
+                      </span>
+                      <div class="tooltip-popup tooltip-right" *ngIf="activeTooltip === 'admin-areas'" (click)="$event.stopPropagation()">
+                        <div class="tooltip-header">
+                          <strong>{{ tabInfoMap['admin-areas'].name }}</strong>
+                          <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                        </div>
+                        <div class="tooltip-role">
+                          <i class="fas fa-user-tag"></i> {{ tabInfoMap['admin-areas'].role }}
+                        </div>
+                        <div class="tooltip-body">
+                          {{ tabInfoMap['admin-areas'].description }}
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- Manage Blocks -->
+                    <li class="menu-item-with-info">
+                      <a href="#">Manage Blocks</a>
+                      <span class="info-icon" (click)="showTooltip('admin-blocks', $event)">
+                        <i class="fas fa-info-circle"></i>
+                      </span>
+                      <div class="tooltip-popup tooltip-right" *ngIf="activeTooltip === 'admin-blocks'" (click)="$event.stopPropagation()">
+                        <div class="tooltip-header">
+                          <strong>{{ tabInfoMap['admin-blocks'].name }}</strong>
+                          <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                        </div>
+                        <div class="tooltip-role">
+                          <i class="fas fa-user-tag"></i> {{ tabInfoMap['admin-blocks'].role }}
+                        </div>
+                        <div class="tooltip-body">
+                          {{ tabInfoMap['admin-blocks'].description }}
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- Manage Units -->
+                    <li class="menu-item-with-info">
+                      <a href="#">Manage Units</a>
+                      <span class="info-icon" (click)="showTooltip('admin-units', $event)">
+                        <i class="fas fa-info-circle"></i>
+                      </span>
+                      <div class="tooltip-popup tooltip-right" *ngIf="activeTooltip === 'admin-units'" (click)="$event.stopPropagation()">
+                        <div class="tooltip-header">
+                          <strong>{{ tabInfoMap['admin-units'].name }}</strong>
+                          <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                        </div>
+                        <div class="tooltip-role">
+                          <i class="fas fa-user-tag"></i> {{ tabInfoMap['admin-units'].role }}
+                        </div>
+                        <div class="tooltip-body">
+                          {{ tabInfoMap['admin-units'].description }}
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- Manage Shifts -->
+                    <li class="menu-item-with-info">
+                      <a href="#">Manage Shifts</a>
+                      <span class="info-icon" (click)="showTooltip('admin-shifts', $event)">
+                        <i class="fas fa-info-circle"></i>
+                      </span>
+                      <div class="tooltip-popup tooltip-right" *ngIf="activeTooltip === 'admin-shifts'" (click)="$event.stopPropagation()">
+                        <div class="tooltip-header">
+                          <strong>{{ tabInfoMap['admin-shifts'].name }}</strong>
+                          <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                        </div>
+                        <div class="tooltip-role">
+                          <i class="fas fa-user-tag"></i> {{ tabInfoMap['admin-shifts'].role }}
+                        </div>
+                        <div class="tooltip-body">
+                          {{ tabInfoMap['admin-shifts'].description }}
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- Assessments -->
+                    <li class="menu-item-with-info">
+                      <a href="#">Assessments</a>
+                      <span class="info-icon" (click)="showTooltip('admin-assessments', $event)">
+                        <i class="fas fa-info-circle"></i>
+                      </span>
+                      <div class="tooltip-popup tooltip-right" *ngIf="activeTooltip === 'admin-assessments'" (click)="$event.stopPropagation()">
+                        <div class="tooltip-header">
+                          <strong>{{ tabInfoMap['admin-assessments'].name }}</strong>
+                          <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                        </div>
+                        <div class="tooltip-role">
+                          <i class="fas fa-user-tag"></i> {{ tabInfoMap['admin-assessments'].role }}
+                        </div>
+                        <div class="tooltip-body">
+                          {{ tabInfoMap['admin-assessments'].description }}
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- Manage Users -->
+                    <li class="menu-item-with-info">
+                      <a href="#">Manage Users</a>
+                      <span class="info-icon" (click)="showTooltip('admin-users', $event)">
+                        <i class="fas fa-info-circle"></i>
+                      </span>
+                      <div class="tooltip-popup tooltip-right" *ngIf="activeTooltip === 'admin-users'" (click)="$event.stopPropagation()">
+                        <div class="tooltip-header">
+                          <strong>{{ tabInfoMap['admin-users'].name }}</strong>
+                          <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                        </div>
+                        <div class="tooltip-role">
+                          <i class="fas fa-user-tag"></i> {{ tabInfoMap['admin-users'].role }}
+                        </div>
+                        <div class="tooltip-body">
+                          {{ tabInfoMap['admin-users'].description }}
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- Manage Progression Level -->
+                    <li class="menu-item-with-info">
+                      <a href="#">Manage Progression Level</a>
+                      <span class="info-icon" (click)="showTooltip('admin-progression', $event)">
+                        <i class="fas fa-info-circle"></i>
+                      </span>
+                      <div class="tooltip-popup tooltip-right" *ngIf="activeTooltip === 'admin-progression'" (click)="$event.stopPropagation()">
+                        <div class="tooltip-header">
+                          <strong>{{ tabInfoMap['admin-progression'].name }}</strong>
+                          <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                        </div>
+                        <div class="tooltip-role">
+                          <i class="fas fa-user-tag"></i> {{ tabInfoMap['admin-progression'].role }}
+                        </div>
+                        <div class="tooltip-body">
+                          {{ tabInfoMap['admin-progression'].description }}
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- User Feedback -->
+                <li class="menu-item-with-info">
+                  <a href="#">User Feedback</a>
+                  <span class="info-icon" (click)="showTooltip('user-feedback', $event)">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-popup" *ngIf="activeTooltip === 'user-feedback'" (click)="$event.stopPropagation()">
+                    <div class="tooltip-header">
+                      <strong>{{ tabInfoMap['user-feedback'].name }}</strong>
+                      <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                    </div>
+                    <div class="tooltip-role">
+                      <i class="fas fa-user-tag"></i> {{ tabInfoMap['user-feedback'].role }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{ tabInfoMap['user-feedback'].description }}
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Help -->
+                <li class="menu-item-with-info active">
+                  <a href="#">Help</a>
+                  <span class="info-icon" (click)="showTooltip('help', $event)">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-popup" *ngIf="activeTooltip === 'help'" (click)="$event.stopPropagation()">
+                    <div class="tooltip-header">
+                      <strong>{{ tabInfoMap['help'].name }}</strong>
+                      <span class="tooltip-close" (click)="hideTooltip()">&times;</span>
+                    </div>
+                    <div class="tooltip-role">
+                      <i class="fas fa-user-tag"></i> {{ tabInfoMap['help'].role }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{ tabInfoMap['help'].description }}
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Main Content Area -->
+          <div class="col-md-10">
+            <div class="content-card">
+              <ng-content></ng-content>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,372 @@
+/*
+  Styling for the HelpComponent - NLNG A&P Portal themed.
+*/
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.help-container {
+  padding: 0;
+}
+
+/* Page Header */
+.help-header {
+  background: linear-gradient(135deg, #1a5d3a 0%, #238b5b 100%);
+  color: white;
+  padding: 20px 25px;
+  margin: -20px -20px 25px -20px;
+  border-radius: 5px 5px 0 0;
+}
+
+.help-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.help-header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* Section Cards */
+.section-card {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.section-card .card-header {
+  background: linear-gradient(135deg, #1e8a6e 0%, #1a5d3a 100%);
+  color: white;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 5px 5px 0 0;
+  border: none;
+}
+
+.section-card .card-header i {
+  margin-right: 10px;
+}
+
+.section-card .card-body {
+  padding: 20px;
+}
+
+/* Workflow Steps */
+.workflow-steps {
+  counter-reset: step-counter;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.workflow-steps li {
+  position: relative;
+  padding: 15px 15px 15px 60px;
+  margin-bottom: 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  border-left: 3px solid #1e8a6e;
+}
+
+.workflow-steps li::before {
+  counter-increment: step-counter;
+  content: counter(step-counter);
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: #1e8a6e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.workflow-steps li strong {
+  color: #1a5d3a;
+}
+
+/* Table Styling */
+.table {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background: #1a5d3a;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 12px 15px;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+  background-color: #e8f5e9;
+}
+
+.table td {
+  padding: 10px 15px;
+  vertical-align: middle;
+  border-color: #e9ecef;
+}
+
+.table tbody tr td:first-child {
+  font-weight: 600;
+  color: #1a5d3a;
+}
+
+/* Best Practices List */
+.best-practices {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.best-practices li {
+  padding: 12px 15px 12px 45px;
+  position: relative;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.best-practices li:last-child {
+  border-bottom: none;
+}
+
+.best-practices li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 15px;
+  top: 14px;
+  color: #1e8a6e;
+}
+
+.best-practices li strong {
+  color: #1a5d3a;
+}
+
+/* Footer Note */
+.help-footer {
+  background: #e8f5e9;
+  border-left: 4px solid #1e8a6e;
+  padding: 15px 20px;
+  border-radius: 0 5px 5px 0;
+  margin-top: 20px;
+}
+
+.help-footer p {
+  margin: 0;
+  color: #1a5d3a;
+}
+
+/* Highlight text */
+em {
+  font-style: normal;
+  background: #e8f5e9;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #1a5d3a;
+  font-weight: 500;
+}
+
+/* Role Sections */
+.role-section {
+  margin-bottom: 25px;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.role-section:last-child {
+  margin-bottom: 0;
+}
+
+.role-title {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 12px 15px;
+  margin: 0;
+  font-size: 1rem;
+  color: #1a5d3a;
+  border-bottom: 2px solid #1e8a6e;
+}
+
+.role-title i {
+  margin-right: 10px;
+  color: #1e8a6e;
+}
+
+.role-content {
+  padding: 15px;
+}
+
+.role-content p {
+  margin-bottom: 10px;
+}
+
+.role-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.role-content ul li {
+  margin-bottom: 5px;
+}
+
+/* Outcome Box */
+.outcome-box {
+  margin: 15px 0;
+  display: grid;
+  gap: 10px;
+}
+
+.outcome {
+  padding: 12px 15px;
+  border-radius: 5px;
+  border-left: 4px solid;
+}
+
+.outcome strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.outcome p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.outcome.competent {
+  background: #e8f5e9;
+  border-left-color: #28a745;
+}
+
+.outcome.competent strong {
+  color: #28a745;
+}
+
+.outcome.not-competent {
+  background: #ffeaea;
+  border-left-color: #dc3545;
+}
+
+.outcome.not-competent strong {
+  color: #dc3545;
+}
+
+.outcome.needs-improvement {
+  background: #fff8e6;
+  border-left-color: #ffc107;
+}
+
+.outcome.needs-improvement strong {
+  color: #d39e00;
+}
+
+/* Important Note */
+.important-note {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 5px;
+  padding: 12px 15px;
+  margin-top: 15px;
+  color: #856404;
+}
+
+.important-note i {
+  color: #ffc107;
+  margin-right: 8px;
+}
+
+/* Flow Diagram */
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 20px 0;
+  overflow-x: auto;
+}
+
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.flow-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #1e8a6e 0%, #1a5d3a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.flow-label {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.flow-label small {
+  display: block;
+  font-weight: 400;
+  color: #666;
+  font-size: 0.7rem;
+}
+
+.flow-arrow {
+  color: #1e8a6e;
+  font-size: 1.2rem;
+  padding: 0 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .flow-diagram {
+    justify-content: center;
+  }
+
+  .flow-step {
+    min-width: 60px;
+  }
+
+  .flow-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .flow-label {
+    font-size: 0.7rem;
+  }
+
+  .outcome-box {
+    grid-template-columns: 1fr;
+  }
+}

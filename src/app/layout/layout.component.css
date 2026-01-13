@@ -1,0 +1,222 @@
+/* Layout component specific styles */
+
+.logo-placeholder {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+  border: 2px solid #ffc107;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: white;
+}
+
+.logo-placeholder .logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffc107;
+  margin-right: 5px;
+}
+
+.logo-placeholder small {
+  font-size: 0.5rem;
+  line-height: 1.1;
+  color: #ffc107;
+}
+
+.navbar-custom {
+  padding: 12px 0;
+}
+
+.content-page {
+  padding-top: 20px;
+}
+
+.sidebar-menu .has-submenu > a::before {
+  content: "›" !important;
+}
+
+.sidebar-menu .has-submenu > a::after {
+  content: none !important;
+}
+
+.sidebar-menu li.active > a {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-menu .submenu {
+  padding-left: 0;
+}
+
+.sidebar-menu .submenu li a::before {
+  content: "•";
+  margin-right: 8px;
+}
+
+/* Menu item with info icon */
+.menu-item-with-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-item-with-info > a {
+  flex: 1;
+}
+
+.menu-item-with-info > a::before {
+  content: "›";
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+/* Info Icon */
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.info-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.info-icon i {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* Tooltip Popup */
+.tooltip-popup {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: 10px;
+  width: 280px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  overflow: hidden;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.tooltip-popup.tooltip-right {
+  left: 100%;
+  right: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.tooltip-header {
+  background: linear-gradient(135deg, #1e8a6e 0%, #1a5d3a 100%);
+  color: white;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tooltip-header strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.tooltip-close {
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.tooltip-close:hover {
+  opacity: 1;
+}
+
+.tooltip-role {
+  background: #f0f7f4;
+  padding: 8px 15px;
+  font-size: 0.8rem;
+  color: #1a5d3a;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tooltip-role i {
+  margin-right: 6px;
+  color: #1e8a6e;
+}
+
+.tooltip-body {
+  padding: 15px;
+  font-size: 0.85rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Arrow for tooltip */
+.tooltip-popup::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 15px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #1e8a6e;
+}
+
+/* Submenu specific adjustments */
+.submenu .menu-item-with-info > a::before {
+  content: "•";
+}
+
+.submenu .info-icon {
+  margin-right: 5px;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 992px) {
+  .tooltip-popup {
+    position: fixed;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin-left: 0;
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .tooltip-popup::before {
+    display: none;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
